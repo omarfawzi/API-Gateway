@@ -28,10 +28,6 @@ RUN curl -sSL https://github.com/hairyhenderson/gomplate/releases/download/${GOM
 
 USER app
 
-RUN go env -w GOPRIVATE=codehub.digitalarsenal.net
-
-RUN git config --global url."git@codehub.digitalarsenal.net:".insteadOf "https://codehub.digitalarsenal.net"
-
 WORKDIR /app
 
 #============================================================
