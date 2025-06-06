@@ -30,7 +30,7 @@ install-wire:
 
 docker: wire
 	[ -f .env ] || cp .env.dist .env
-	docker network create || true
+	docker network create gateway || true
 	docker-compose up
 
 docker-up: ## Start docker stack
