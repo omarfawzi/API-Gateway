@@ -1,0 +1,279 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1748356046025' stop='1748356052893'>
+    <name>[REGRESSION] Get server recommendations endpoint</name>
+    <title>[REGRESSION] Get server recommendations endpoint</title>
+    <test-cases>
+        <test-case start='1748356046026' status='passed' stop='1748356046216'>
+            <name>should return Lithuania server as a first server suggestion when using IP filter</name>
+            <title>should return Lithuania server as a first server suggestion when using IP filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356046218' status='passed' stop='1748356046417'>
+            <name>should return specific recommended server when using IP and coordinates as filter parameters</name>
+            <title>should return specific recommended server when using IP and coordinates as filter parameters</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356046418' status='passed' stop='1748356046786'>
+            <name>should return specific recommended server when using IP and coordinates as filter parameters</name>
+            <title>should return specific recommended server when using IP and coordinates as filter parameters</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356046786' status='passed' stop='1748356046951'>
+            <name>should recommend specific server list for Kyiv</name>
+            <title>should recommend specific server list for Kyiv</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356046951' status='passed' stop='1748356047148'>
+            <name>should recommend specific server list for Osaka</name>
+            <title>should recommend specific server list for Osaka</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356047149' status='passed' stop='1748356047334'>
+            <name>should recommend specific server list for Tokyo</name>
+            <title>should recommend specific server list for Tokyo</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356047334' status='passed' stop='1748356047529'>
+            <name>should not recommend Israel or Georgia to users connecting from UAE</name>
+            <title>should not recommend Israel or Georgia to users connecting from UAE</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356047531' status='passed' stop='1748356047722'>
+            <name>should not recommend Israel or Georgia to users connecting from UAE</name>
+            <title>should not recommend Israel or Georgia to users connecting from UAE</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356047724' status='passed' stop='1748356047905'>
+            <name>should recommend specific server list for Lviv</name>
+            <title>should recommend specific server list for Lviv</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356047907' status='passed' stop='1748356048109'>
+            <name>should recommend specific server list for Kharkiv</name>
+            <title>should recommend specific server list for Kharkiv</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356048110' status='passed' stop='1748356048309'>
+            <name>should recommend Manchester server in 30km radius</name>
+            <title>should recommend Manchester server in 30km radius</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356048309' status='passed' stop='1748356048520'>
+            <name>should recommend Boston server in 30km radius</name>
+            <title>should recommend Boston server in 30km radius</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356048521' status='passed' stop='1748356048745'>
+            <name>New York servers count should not be lower than 20</name>
+            <title>New York servers count should not be lower than 20</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356048745' status='passed' stop='1748356048937'>
+            <name>Lost Angeles servers count should not be lower than 20</name>
+            <title>Lost Angeles servers count should not be lower than 20</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356048937' status='passed' stop='1748356049125'>
+            <name>should recommend France or Spain server for customer in Andora</name>
+            <title>should recommend France or Spain server for customer in Andora</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356049125' status='passed' stop='1748356049334'>
+            <name>should recommend coordinates parameters to override IP server when using {"coordinates[longitude]":"13.4105","coordinates[latitude]":"52.5244","ip":"185.128.27.248","limit":1} filter</name>
+            <title>should recommend coordinates parameters to override IP server when using {"coordinates[longitude]":"13.4105","coordinates[latitude]":"52.5244","ip":"185.128.27.248","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356049335' status='passed' stop='1748356049543'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"26.0391","coordinates[longitude]":"-98.0757","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"26.0391","coordinates[longitude]":"-98.0757","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356049543' status='passed' stop='1748356049753'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"26.0595","coordinates[longitude]":"-98.0597","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"26.0595","coordinates[longitude]":"-98.0597","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356049753' status='passed' stop='1748356049962'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"25.9306","coordinates[longitude]":"-97.5215","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"25.9306","coordinates[longitude]":"-97.5215","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356049962' status='passed' stop='1748356050173'>
+            <name>should recommend distance to server to be a second major factor server when using {"coordinates[latitude]":"56.0194","coordinates[longitude]":"92.8955","limit":1} filter</name>
+            <title>should recommend distance to server to be a second major factor server when using {"coordinates[latitude]":"56.0194","coordinates[longitude]":"92.8955","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356050174' status='passed' stop='1748356050373'>
+            <name>should recommend same country server to be returned above all other when using coordinates parameter server when using {"coordinates[latitude]":"55.633","coordinates[longitude]":"12.7558","limit":1} filter</name>
+            <title>should recommend same country server to be returned above all other when using coordinates parameter server when using {"coordinates[latitude]":"55.633","coordinates[longitude]":"12.7558","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356050373' status='passed' stop='1748356050567'>
+            <name>should recommend same country server to be returned above all other when using coordinates parameter server when using {"coordinates[latitude]":"55.590","coordinates[longitude]":"12.6740","limit":1} filter</name>
+            <title>should recommend same country server to be returned above all other when using coordinates parameter server when using {"coordinates[latitude]":"55.590","coordinates[longitude]":"12.6740","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356050567' status='passed' stop='1748356050765'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"41.4971","coordinates[longitude]":"-6.2763","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"41.4971","coordinates[longitude]":"-6.2763","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356050765' status='passed' stop='1748356050972'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"40.3498","coordinates[longitude]":"18.1936","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"40.3498","coordinates[longitude]":"18.1936","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356050973' status='passed' stop='1748356051136'>
+            <name>should recommend closest country server to be recommended for user located in mediterranean server when using {"coordinates[latitude]":"36.7287","coordinates[longitude]":"30.7975","limit":1} filter</name>
+            <title>should recommend closest country server to be recommended for user located in mediterranean server when using {"coordinates[latitude]":"36.7287","coordinates[longitude]":"30.7975","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356051136' status='passed' stop='1748356051335'>
+            <name>should recommend expect closest country server to be recommended for customer in mediterranean server when using {"coordinates[latitude]":"34.6722","coordinates[longitude]":"33.5318","limit":1} filter</name>
+            <title>should recommend expect closest country server to be recommended for customer in mediterranean server when using {"coordinates[latitude]":"34.6722","coordinates[longitude]":"33.5318","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356051335' status='passed' stop='1748356051538'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"65.8404","coordinates[longitude]":"24.1309","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"65.8404","coordinates[longitude]":"24.1309","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356051539' status='passed' stop='1748356051744'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"31.4839","coordinates[longitude]":"-111.5431","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"31.4839","coordinates[longitude]":"-111.5431","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356051745' status='passed' stop='1748356051952'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"32.5106","coordinates[longitude]":"-114.7204","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"32.5106","coordinates[longitude]":"-114.7204","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356051952' status='passed' stop='1748356052134'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"32.5522","coordinates[longitude]":"-117.0095","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"32.5522","coordinates[longitude]":"-117.0095","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356052135' status='passed' stop='1748356052349'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"32.5446","coordinates[longitude]":"-117.0829","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"32.5446","coordinates[longitude]":"-117.0829","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356052350' status='passed' stop='1748356052515'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"25.4947","coordinates[longitude]":"-80.3659","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"25.4947","coordinates[longitude]":"-80.3659","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356052515' status='passed' stop='1748356052685'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"48.0432","coordinates[longitude]":"-90.4360","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"48.0432","coordinates[longitude]":"-90.4360","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356052685' status='passed' stop='1748356052893'>
+            <name>should recommend same country server to be returned above all other when using coordinates parameter server when using {"coordinates[latitude]":"47.8137","coordinates[longitude]":"13.0300","limit":1} filter</name>
+            <title>should recommend same country server to be returned above all other when using coordinates parameter server when using {"coordinates[latitude]":"47.8137","coordinates[longitude]":"13.0300","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

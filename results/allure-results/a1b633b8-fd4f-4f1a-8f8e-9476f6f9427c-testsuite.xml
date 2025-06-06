@@ -1,0 +1,31 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1748356075094' stop='1748356076097'>
+    <name>[SMOKE] Get serversV2 endpoint</name>
+    <title>[SMOKE] Get serversV2 endpoint</title>
+    <test-cases>
+        <test-case start='1748356075094' status='passed' stop='1748356075550'>
+            <name>should respond in the same format as /v1/servers?format=v2</name>
+            <title>should respond in the same format as /v1/servers?format=v2</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356075551' status='passed' stop='1748356075920'>
+            <name>should return a valid response with an invalid type filter parameter</name>
+            <title>should return a valid response with an invalid type filter parameter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1748356075921' status='passed' stop='1748356076096'>
+            <name>should only return online servers</name>
+            <title>should only return online servers</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

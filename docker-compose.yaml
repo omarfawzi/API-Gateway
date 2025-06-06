@@ -1,0 +1,23 @@
+networks:
+  default:
+    name: gateway
+    external: true
+
+services:
+  api-gateway:
+    container_name: api_gateway
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      CONFIG_TEMPLATE_FILE: api.yaml
+    command: >
+      sh -c 'make render-templates && go run cmd/main.go -c config/$(basename "$$CONFIG_TEMPLATE_FILE" .yaml).json'

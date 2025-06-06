@@ -1,0 +1,155 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1748356637035' stop='1748356712412'>
+    <name>[REGRESSION] Get servers endpoint</name>
+    <title>[REGRESSION] Get servers endpoint</title>
+    <test-cases>
+        <test-case start='1748356637035' status='failed' stop='1748356652066'>
+            <name>should limit server count returned when filter is used</name>
+            <title>should limit server count returned when filter is used</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/servers.spec.js:16:26)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356652069' status='failed' stop='1748356667183'>
+            <name>should return empty array when filters do not match any server</name>
+            <title>should return empty array when filters do not match any server</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/servers.spec.js:85:26)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356667187' status='failed' stop='1748356682259'>
+            <name>should return proper server object structure for every returned server</name>
+            <title>should return proper server object structure for every returned server</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/servers.spec.js:105:26)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356682263' status='failed' stop='1748356682269'>
+            <name>should return corresponding server list when searcing by group identifier</name>
+            <title>should return corresponding server list when searcing by group identifier</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>TypeError: Cannot read properties of undefined (reading '1')</message>
+                <stack-trace>    at UserContext.&lt;anonymous> (/app/tests/regression/servers.spec.js:158:23)
+                    at &lt;Jasmine></stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356682269' status='failed' stop='1748356682270'>
+            <name>should return corresponding server list when searcing by group id</name>
+            <title>should return corresponding server list when searcing by group id</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>TypeError: Cannot read properties of undefined (reading '1')</message>
+                <stack-trace>    at UserContext.&lt;anonymous> (/app/tests/regression/servers.spec.js:194:23)
+                    at &lt;Jasmine></stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356682270' status='failed' stop='1748356682271'>
+            <name>should return corresponding server list when searcing by technology identifier</name>
+            <title>should return corresponding server list when searcing by technology identifier</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>TypeError: Cannot read properties of undefined (reading '1')</message>
+                <stack-trace>    at UserContext.&lt;anonymous> (/app/tests/regression/servers.spec.js:230:23)
+                    at &lt;Jasmine></stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356682271' status='failed' stop='1748356682272'>
+            <name>should return corresponding server list when searcing by technology id</name>
+            <title>should return corresponding server list when searcing by technology id</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>TypeError: Cannot read properties of undefined (reading '1')</message>
+                <stack-trace>    at UserContext.&lt;anonymous> (/app/tests/regression/servers.spec.js:268:23)
+                    at &lt;Jasmine></stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356682273' status='failed' stop='1748356682273'>
+            <name>should return corresponding list of servers when searcing by technology pivot status</name>
+            <title>should return corresponding list of servers when searcing by technology pivot status</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>TypeError: Cannot read properties of undefined (reading '1')</message>
+                <stack-trace>    at UserContext.&lt;anonymous> (/app/tests/regression/servers.spec.js:304:23)
+                    at &lt;Jasmine></stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356682273' status='failed' stop='1748356682274'>
+            <name>should return corresponding server list when searcing by technology and group id</name>
+            <title>should return corresponding server list when searcing by technology and group id</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>TypeError: Cannot read properties of undefined (reading '1')</message>
+                <stack-trace>    at UserContext.&lt;anonymous> (/app/tests/regression/servers.spec.js:343:23)
+                    at &lt;Jasmine></stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356682274' status='failed' stop='1748356697323'>
+            <name>Group object parameters shouldn't be the same as it's nested type parameters in Meshnet servers</name>
+            <title>Group object parameters shouldn't be the same as it's nested type parameters in Meshnet servers</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/servers.spec.js:394:26)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356697323' status='failed' stop='1748356712410'>
+            <name>Group object parameters shouldn't be the same as it's nested type parameters in VPN servers</name>
+            <title>Group object parameters shouldn't be the same as it's nested type parameters in VPN servers</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/servers.spec.js:455:26)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

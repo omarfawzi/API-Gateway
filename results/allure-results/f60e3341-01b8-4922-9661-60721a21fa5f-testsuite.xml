@@ -1,0 +1,483 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1748356124885' stop='1748356637013'>
+    <name>[REGRESSION] Get server recommendations endpoint</name>
+    <title>[REGRESSION] Get server recommendations endpoint</title>
+    <test-cases>
+        <test-case start='1748356124885' status='failed' stop='1748356139933'>
+            <name>should return Lithuania server as a first server suggestion when using IP filter</name>
+            <title>should return Lithuania server as a first server suggestion when using IP filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:12:26)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356139938' status='failed' stop='1748356154987'>
+            <name>should return specific recommended server when using IP and coordinates as filter parameters</name>
+            <title>should return specific recommended server when using IP and coordinates as filter parameters</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:228:26)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356154989' status='failed' stop='1748356170038'>
+            <name>should return specific recommended server when using IP and coordinates as filter parameters</name>
+            <title>should return specific recommended server when using IP and coordinates as filter parameters</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:444:26)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356170043' status='failed' stop='1748356185096'>
+            <name>should recommend specific server list for Kyiv</name>
+            <title>should recommend specific server list for Kyiv</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:662:26)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356185097' status='failed' stop='1748356200173'>
+            <name>should recommend specific server list for Osaka</name>
+            <title>should recommend specific server list for Osaka</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:682:26)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356200188' status='failed' stop='1748356215294'>
+            <name>should recommend specific server list for Tokyo</name>
+            <title>should recommend specific server list for Tokyo</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:709:26)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356215300' status='failed' stop='1748356230375'>
+            <name>should not recommend Israel or Georgia to users connecting from UAE</name>
+            <title>should not recommend Israel or Georgia to users connecting from UAE</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:737:28)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356230378' status='failed' stop='1748356245442'>
+            <name>should not recommend Israel or Georgia to users connecting from UAE</name>
+            <title>should not recommend Israel or Georgia to users connecting from UAE</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:771:28)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356245451' status='failed' stop='1748356260500'>
+            <name>should recommend specific server list for Lviv</name>
+            <title>should recommend specific server list for Lviv</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:804:26)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356260502' status='failed' stop='1748356275567'>
+            <name>should recommend specific server list for Kharkiv</name>
+            <title>should recommend specific server list for Kharkiv</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:824:26)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356275569' status='failed' stop='1748356290618'>
+            <name>should recommend Manchester server in 30km radius</name>
+            <title>should recommend Manchester server in 30km radius</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:844:26)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356290619' status='failed' stop='1748356305690'>
+            <name>should recommend Boston server in 30km radius</name>
+            <title>should recommend Boston server in 30km radius</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:869:34)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356305690' status='failed' stop='1748356320742'>
+            <name>New York servers count should not be lower than 20</name>
+            <title>New York servers count should not be lower than 20</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:889:26)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356320744' status='failed' stop='1748356335803'>
+            <name>Lost Angeles servers count should not be lower than 20</name>
+            <title>Lost Angeles servers count should not be lower than 20</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:920:26)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356335805' status='failed' stop='1748356350857'>
+            <name>should recommend France or Spain server for customer in Andora</name>
+            <title>should recommend France or Spain server for customer in Andora</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:953:26)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356350858' status='failed' stop='1748356365905'>
+            <name>should recommend coordinates parameters to override IP server when using {"coordinates[longitude]":"13.4105","coordinates[latitude]":"52.5244","ip":"185.128.27.248","limit":1} filter</name>
+            <title>should recommend coordinates parameters to override IP server when using {"coordinates[longitude]":"13.4105","coordinates[latitude]":"52.5244","ip":"185.128.27.248","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:985:28)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356365909' status='failed' stop='1748356380971'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"26.0391","coordinates[longitude]":"-98.0757","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"26.0391","coordinates[longitude]":"-98.0757","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:985:28)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356380973' status='failed' stop='1748356396014'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"26.0595","coordinates[longitude]":"-98.0597","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"26.0595","coordinates[longitude]":"-98.0597","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:985:28)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356396018' status='failed' stop='1748356411121'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"25.9306","coordinates[longitude]":"-97.5215","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"25.9306","coordinates[longitude]":"-97.5215","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:985:28)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356411122' status='failed' stop='1748356426179'>
+            <name>should recommend distance to server to be a second major factor server when using {"coordinates[latitude]":"56.0194","coordinates[longitude]":"92.8955","limit":1} filter</name>
+            <title>should recommend distance to server to be a second major factor server when using {"coordinates[latitude]":"56.0194","coordinates[longitude]":"92.8955","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:985:28)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356426180' status='failed' stop='1748356441240'>
+            <name>should recommend same country server to be returned above all other when using coordinates parameter server when using {"coordinates[latitude]":"55.633","coordinates[longitude]":"12.7558","limit":1} filter</name>
+            <title>should recommend same country server to be returned above all other when using coordinates parameter server when using {"coordinates[latitude]":"55.633","coordinates[longitude]":"12.7558","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:985:28)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356441244' status='failed' stop='1748356456306'>
+            <name>should recommend same country server to be returned above all other when using coordinates parameter server when using {"coordinates[latitude]":"55.590","coordinates[longitude]":"12.6740","limit":1} filter</name>
+            <title>should recommend same country server to be returned above all other when using coordinates parameter server when using {"coordinates[latitude]":"55.590","coordinates[longitude]":"12.6740","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:985:28)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356456309' status='failed' stop='1748356471364'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"41.4971","coordinates[longitude]":"-6.2763","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"41.4971","coordinates[longitude]":"-6.2763","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:985:28)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356471366' status='failed' stop='1748356486411'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"40.3498","coordinates[longitude]":"18.1936","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"40.3498","coordinates[longitude]":"18.1936","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:985:28)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356486415' status='failed' stop='1748356501460'>
+            <name>should recommend closest country server to be recommended for user located in mediterranean server when using {"coordinates[latitude]":"36.7287","coordinates[longitude]":"30.7975","limit":1} filter</name>
+            <title>should recommend closest country server to be recommended for user located in mediterranean server when using {"coordinates[latitude]":"36.7287","coordinates[longitude]":"30.7975","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:985:28)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356501462' status='failed' stop='1748356516514'>
+            <name>should recommend expect closest country server to be recommended for customer in mediterranean server when using {"coordinates[latitude]":"34.6722","coordinates[longitude]":"33.5318","limit":1} filter</name>
+            <title>should recommend expect closest country server to be recommended for customer in mediterranean server when using {"coordinates[latitude]":"34.6722","coordinates[longitude]":"33.5318","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:985:28)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356516517' status='failed' stop='1748356531616'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"65.8404","coordinates[longitude]":"24.1309","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"65.8404","coordinates[longitude]":"24.1309","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:985:28)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356531620' status='failed' stop='1748356546668'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"31.4839","coordinates[longitude]":"-111.5431","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"31.4839","coordinates[longitude]":"-111.5431","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:985:28)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356546668' status='failed' stop='1748356561711'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"32.5106","coordinates[longitude]":"-114.7204","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"32.5106","coordinates[longitude]":"-114.7204","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:985:28)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356561719' status='failed' stop='1748356576776'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"32.5522","coordinates[longitude]":"-117.0095","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"32.5522","coordinates[longitude]":"-117.0095","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:985:28)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356576780' status='failed' stop='1748356591837'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"32.5446","coordinates[longitude]":"-117.0829","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"32.5446","coordinates[longitude]":"-117.0829","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:985:28)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356591838' status='failed' stop='1748356606905'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"25.4947","coordinates[longitude]":"-80.3659","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"25.4947","coordinates[longitude]":"-80.3659","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:985:28)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356606908' status='failed' stop='1748356621952'>
+            <name>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"48.0432","coordinates[longitude]":"-90.4360","limit":1} filter</name>
+            <title>should recommend home country to be identified correctly with coordinates filter server when using {"coordinates[latitude]":"48.0432","coordinates[longitude]":"-90.4360","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:985:28)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1748356621953' status='failed' stop='1748356637007'>
+            <name>should recommend same country server to be returned above all other when using coordinates parameter server when using {"coordinates[latitude]":"47.8137","coordinates[longitude]":"13.0300","limit":1} filter</name>
+            <title>should recommend same country server to be returned above all other when using coordinates parameter server when using {"coordinates[latitude]":"47.8137","coordinates[longitude]":"13.0300","limit":1} filter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Endpoint is not responding. 5 attempts has been made with 3 seconds apart. Endpoint: https://127.0.0.1/v1/servers/recommendations. Method: get</message>
+                <stack-trace>    at next (/app/node_modules/@nordvpn/tests-backend-core/src/request.js:38:11)
+                    at /app/node_modules/@nordvpn/tests-backend-core/src/request.js:34:16
+                    at async UserContext.&lt;anonymous> (/app/tests/regression/serverRecommendations.spec.js:985:28)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

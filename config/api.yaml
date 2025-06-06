@@ -1,0 +1,66 @@
+version: 3
+timeout: 5s
+dialer_keep_alive: 15s
+
+extra_config:
+  github_com/luraproject/lura/router/gin:
+    return_error_msg: true
+    disable_access_log: false
+    disable_redirect_fixed_path: true
+
+endpoints:
+  - endpoint: /posts
+    method: GET
+    output_encoding: json
+    input_headers:
+      - '*'
+    input_query_strings:
+      - '*'
+    backend:
+      - host:
+          - https://jsonplaceholder.typicode.com
+        url_pattern: /posts
+        method: GET
+        encoding: json
+
+  - endpoint: /posts/{id}
+    method: GET
+    output_encoding: json
+    input_headers:
+      - '*'
+    input_query_strings:
+      - '*'
+    backend:
+      - host:
+          - https://jsonplaceholder.typicode.com
+        url_pattern: /posts/{id}
+        method: GET
+        encoding: json
+
+  - endpoint: /users
+    method: GET
+    output_encoding: json
+    input_headers:
+      - '*'
+    input_query_strings:
+      - '*'
+    backend:
+      - host:
+          - https://jsonplaceholder.typicode.com
+        url_pattern: /users
+        method: GET
+        encoding: json
+
+  - endpoint: /comments
+    method: GET
+    output_encoding: json
+    input_headers:
+      - '*'
+    input_query_strings:
+      - '*'
+    backend:
+      - host:
+          - https://jsonplaceholder.typicode.com
+        url_pattern: /comments
+        method: GET
+        encoding: json

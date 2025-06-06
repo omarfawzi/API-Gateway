@@ -1,0 +1,7 @@
+.idea/*
+bin/*
+.env
+config/*.json
+vendor
+.DS_Store
+var/crypto/*
