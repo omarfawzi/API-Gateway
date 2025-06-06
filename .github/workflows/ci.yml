@@ -13,9 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.pull_request.draft == false
 
-    env:
-      IMAGE_NAME: ghcr.io/${{ github.repository }}
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -30,20 +27,22 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Set image name and tag
+        id: meta
+        run: |
+          REPO_LOWER=$(echo "${GITHUB_REPOSITORY}" | tr '[:upper:]' '[:lower:]')
+          if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
+            TAG="${GITHUB_REF#refs/tags/}"
+          else
+            TAG="${GITHUB_SHA}"
+          fi
+          echo "repo=ghcr.io/$REPO_LOWER" >> $GITHUB_OUTPUT
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+
       - name: Build Docker image
         run: |
-          TAG=${{ github.sha }}
-          if [[ "${{ github.ref }}" == refs/tags/* ]]; then
-            TAG=${GITHUB_REF#refs/tags/}
-          fi
-          echo "Using tag: $TAG"
-          docker build --tag $IMAGE_NAME:$TAG \
-            .
+          docker build -t ${{ steps.meta.outputs.repo }}:${{ steps.meta.outputs.tag }} .
 
       - name: Push Docker image
         run: |
-          TAG=${{ github.sha }}
-          if [[ "${{ github.ref }}" == refs/tags/* ]]; then
-            TAG=${GITHUB_REF#refs/tags/}
-          fi
-          docker push $IMAGE_NAME:$TAG
+          docker push ${{ steps.meta.outputs.repo }}:${{ steps.meta.outputs.tag }}
