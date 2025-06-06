@@ -159,7 +159,7 @@ backend:
 #### 🔧 Running Without Docker 
 
 ```shell
-make run CONFIG_TEMPLATE_FILE=servers-api.yaml
+make run CONFIG_TEMPLATE_FILE=api.yaml
 ```
 
 #### 🐳 Running with Docker (recommended)
