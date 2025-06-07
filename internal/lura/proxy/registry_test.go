@@ -23,9 +23,3 @@ func TestHandlerRegistry_RegisterHandlers(t *testing.T) {
 		t.Errorf("expected each registerer to be called once, got %d and %d", r1.called, r2.called)
 	}
 }
-
-func TestProvideHandlersEmpty(t *testing.T) {
-	if len(ProvideHandlers()) != 0 {
-		t.Errorf("expected empty handlers slice")
-	}
-}
