@@ -139,7 +139,7 @@ port: {{ getenv "APP_PORT" | default "8080" }}
 
 In this example, the application port is sourced from the `APP_PORT` environment variable, defaulting to `8080` if not set.
 
-This method is particularly useful for securely passing secrets or environment-specific values. For instance, you can inject Basic Auth headers using both Martian and Gomplate:
+This method is particularly useful for securely passing secrets or environment-specific values. For instance, you can inject Basic Auth headers using both [Martian](https://github.com/google/martian) and Gomplate:
 
 ```yaml
 backend:
