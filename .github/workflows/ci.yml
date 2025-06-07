@@ -3,30 +3,40 @@ name: Go CI
 on:
   push:
     branches: [ "**" ]
+  pull_request:
 
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.24'
+          go-version-file: go.mod  # Uses the Go version declared in your go.mod
+
       - name: Download dependencies
         run: go mod download
+
       - name: Formatting check
         run: |
           fmt_issues=$(gofmt -l . | grep -v vendor/ || true)
           if [ -n "$fmt_issues" ]; then
-            echo "Formatting issues found:" $fmt_issues
+            echo "Formatting issues found:"
+            echo "$fmt_issues"
             exit 1
           fi
+
       - name: Go vet
         run: go vet ./...
-      - name: golangci-lint
+
+      - name: Run golangci-lint
         uses: golangci/golangci-lint-action@v3
         with:
           version: v1.59.1
-      - name: Test
+          args: --out-format=colored-line-number
+
+      - name: Run tests
         run: go test ./... -cover
