@@ -8,7 +8,6 @@ require (
 	github.com/gin-gonic/gin v1.10.1
 	github.com/google/wire v0.6.0
 	github.com/kelseyhightower/envconfig v1.4.0
-	github.com/klauspost/compress v1.18.0
 	github.com/krakendio/krakend-circuitbreaker/v2 v2.0.1
 	github.com/krakendio/krakend-martian/v2 v2.1.1
 	github.com/luraproject/lura/v2 v2.10.1
