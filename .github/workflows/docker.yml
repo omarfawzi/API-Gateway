@@ -3,9 +3,9 @@ name: Docker Build
 on:
   push:
     branches:
-      - main     # or 'master' if that's your default branch
+      - master
     tags:
-      - 'v*'     # Tag pattern like v1.0.0
+      - 'v*'
 
 jobs:
   build:
