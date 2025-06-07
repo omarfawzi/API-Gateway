@@ -11,7 +11,10 @@ func TestMiddlewareErrorResponse(t *testing.T) {
 	next := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("X-Test", "value")
 		w.WriteHeader(http.StatusInternalServerError)
-		w.Write([]byte("bad"))
+		_, err := w.Write([]byte("bad"))
+		if err != nil {
+			return
+		}
 	})
 
 	handler, err := NewServerHandler().middleware(context.Background(), nil, next)
@@ -39,7 +42,10 @@ func TestMiddlewareSuccess(t *testing.T) {
 	next := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("X-Test", "ok")
 		w.WriteHeader(http.StatusOK)
-		w.Write([]byte("hello"))
+		_, err := w.Write([]byte("hello"))
+		if err != nil {
+			return
+		}
 	})
 
 	handler, err := NewServerHandler().middleware(context.Background(), nil, next)

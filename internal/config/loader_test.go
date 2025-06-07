@@ -6,14 +6,20 @@ import (
 )
 
 func TestLoadDefaults(t *testing.T) {
-	os.Unsetenv("APP_CLUSTER")
-	os.Unsetenv("APP_ENVIRONMENT")
-	os.Unsetenv("APP_PORT")
-	os.Unsetenv("LOGGER_LEVEL")
-	os.Unsetenv("LOGGER_ENABLE")
-	os.Unsetenv("SENTRY_ENABLE")
-	os.Unsetenv("SENTRY_DSN")
-	os.Unsetenv("SENTRY_DEBUG")
+	for _, key := range []string{
+		"APP_CLUSTER",
+		"APP_ENVIRONMENT",
+		"APP_PORT",
+		"LOGGER_LEVEL",
+		"LOGGER_ENABLE",
+		"SENTRY_ENABLE",
+		"SENTRY_DSN",
+		"SENTRY_DEBUG",
+	} {
+		if err := os.Unsetenv(key); err != nil {
+			t.Fatalf("failed to unset env var %s: %v", key, err)
+		}
+	}
 
 	cfg, err := Load()
 	if err != nil {
