@@ -2,7 +2,7 @@
 
 [![Go CI](https://github.com/omarfawzi/API-Gateway/actions/workflows/ci.yml/badge.svg)](https://github.com/omarfawzi/API-Gateway/actions/workflows/ci.yml)
 [![Docker Build](https://github.com/omarfawzi/API-Gateway/actions/workflows/docker.yml/badge.svg)](https://github.com/omarfawzi/API-Gateway/actions/workflows/docker.yml)
-[![Codecov](https://codecov.io/gh/omarfawzi/API-Gateway/branch/main/graph/badge.svg)](https://codecov.io/gh/omarfawzi/API-Gateway)
+[![Codecov](https://codecov.io/github/omarfawzi/API-Gateway/branch/master/graph/badge.svg?token=gbI4Kj0gDi)](https://codecov.io/github/omarfawzi/API-Gateway)
 
 API Gateway is a high-performance, configurable API gateway built on top of [Lura (KrakenD)](https://github.com/luraproject/lura).
 
