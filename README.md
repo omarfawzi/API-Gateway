@@ -151,7 +151,7 @@ backend:
           value: {{ getenv "MY_ENV_TAG" | default "test-env" }}
 ```
 
-> Note: Note: Gomplate is not used at runtime or during the application bootstrap. It runs only as an entrypoint in the container to generate the final configuration.
+> Note: Gomplate is not used at runtime or during the application bootstrap. It runs only as an entrypoint in the container to generate the final configuration file.
 
 ---
 ### Build & Run
@@ -159,7 +159,7 @@ backend:
 #### 🔧 Running Without Docker 
 
 ```shell
-make run CONFIG_TEMPLATE_FILE=servers-api.yaml
+make run CONFIG_TEMPLATE_FILE=api.yaml
 ```
 
 #### 🐳 Running with Docker (recommended)
