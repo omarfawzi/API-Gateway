@@ -6,6 +6,8 @@
 
 API Gateway is a high-performance, configurable API gateway built on top of [Lura (KrakenD)](https://github.com/luraproject/lura).
 
+![API Gateway](https://www.connecting-software.com/wp-content/uploads/2023/01/API-Gateway-Diagram.webp)
+
 ## Table of Contents
 
 - [Clone the repository](#clone-the-repository)
