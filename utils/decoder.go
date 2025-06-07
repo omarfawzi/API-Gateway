@@ -6,12 +6,17 @@ import (
 	"io"
 )
 
-func DecodeGzipBody(body []byte) ([]byte, error) {
+func DecodeGzipBody(body []byte) (data []byte, err error) {
 	reader, err := gzip.NewReader(bytes.NewReader(body))
 	if err != nil {
 		return nil, err
 	}
-	defer reader.Close()
+	defer func() {
+		if cerr := reader.Close(); cerr != nil && err == nil {
+			err = cerr
+		}
+	}()
 
-	return io.ReadAll(reader)
+	data, err = io.ReadAll(reader)
+	return
 }
