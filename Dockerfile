@@ -9,7 +9,7 @@ FROM golang-base AS dev
 
 ARG UID=1000
 
-RUN apk add --no-cache git python3 py3-pip openssh make curl
+RUN apk add --no-cache git make curl
 
 RUN adduser -D -u $UID app
 
