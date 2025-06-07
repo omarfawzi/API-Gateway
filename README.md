@@ -8,32 +8,29 @@ API Gateway is a high-performance, configurable API gateway built on top of [Lur
 
 ## Table of Contents
 
+- [Clone the repository](#clone-the-repository)
 - [Features](#features)
-- [Getting Started](#getting-started)
-    - [Clone the repository](#clone-the-repository)
-    - [Configuration](#configuration)
-    - [Server Handlers](#server-handlers)
-    - [Proxy Req/Resp Modifiers](#proxy-reqresp-modifiers)
-    - [Client Handlers](#client-handlers)
-    - [Backend Middlewares](#backend-middlewares)
-    - [Dynamic Configuration File](#dynamic-configuration-file)
-    - [Build & Run](#build--run)
-    - [Diagram](#diagram)
-
-## Features
-
-- Proxy requests to backend services
-- Configurable via Lura v3 YAML configuration
-- Debug and release modes
-- Integrated Sentry error tracking
-
-## Getting Started
+- [Configuration](#configuration)
+- [Server Handlers](#server-handlers)
+- [Proxy Req/Resp Modifiers](#proxy-reqresp-modifiers)
+- [Client Handlers](#client-handlers)
+- [Backend Middlewares](#backend-middlewares)
+- [Dynamic Configuration File](#dynamic-configuration-file)
+- [Build & Run](#build--run)
+- [Diagram](#diagram)
 
 ### Clone the repository
 
 ```bash
 git clone git@github.com:omarfawzi/API-Gateway.git
 ```
+
+### Features
+
+- Proxy requests to backend services
+- Configurable via Lura v3 YAML configuration
+- Debug and release modes
+- Integrated Sentry error tracking
 
 ### Configuration
 The gateway uses [Lura Configuration](https://www.krakend.io/docs/configuration/structure/) files for setting up the gateway config
