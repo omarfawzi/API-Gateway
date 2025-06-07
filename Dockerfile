@@ -18,8 +18,6 @@ ENV PATH $PATH:/home/app/.local/bin:/home/app/go/bin
 
 RUN mkdir /app && chown app:app /app
 
-RUN pip install --break-system-packages wait-for-it
-
 ENV GOMPLATE_VERSION=v3.11.5
 
 RUN curl -sSL https://github.com/hairyhenderson/gomplate/releases/download/${GOMPLATE_VERSION}/gomplate_linux-amd64 \
