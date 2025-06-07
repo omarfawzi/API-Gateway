@@ -1,0 +1,32 @@
+name: Go CI
+
+on:
+  push:
+    branches: [ "**" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: stable
+      - name: Download dependencies
+        run: go mod download
+      - name: Formatting check
+        run: |
+          fmt_issues=$(gofmt -l . | grep -v vendor/ || true)
+          if [ -n "$fmt_issues" ]; then
+            echo "Formatting issues found:" $fmt_issues
+            exit 1
+          fi
+      - name: Go vet
+        run: go vet ./...
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v8
+        with:
+          version: v2.1
+      - name: Test
+        run: go test ./... -cover

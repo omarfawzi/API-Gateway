@@ -4,7 +4,7 @@ import (
 	"context"
 	"flag"
 	"gateway/internal/config"
-	"github.com/getsentry/sentry-go"
+	sentry "github.com/getsentry/sentry-go"
 	"log"
 	"net/http"
 
