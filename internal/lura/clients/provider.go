@@ -16,5 +16,5 @@ func ProvideHTTPRequestExecutor(
 }
 
 func ProvideHandlers() []plugin.Registerer {
-	return []plugin.Registerer{}
+	return []plugin.Registerer{grpcRegisterer{}}
 }

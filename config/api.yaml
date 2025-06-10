@@ -64,3 +64,21 @@ endpoints:
         url_pattern: /comments
         method: GET
         encoding: json
+
+  - endpoint: /grpc/sayhello
+    method: POST
+    output_encoding: json
+    input_headers:
+      - '*'
+    input_query_strings:
+      - '*'
+    backend:
+      - host:
+          - http://ignore.this
+        url_pattern: /grpc
+        method: POST
+        extra_config:
+          github.com/devopsfaith/krakend/transport/http/client/executor:
+            name: grpc
+            endpoint: localhost:50051
+            method: helloworld.Greeter/SayHello
