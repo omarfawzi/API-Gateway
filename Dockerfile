@@ -9,7 +9,7 @@ FROM golang-base AS dev
 
 ARG UID=1000
 
-RUN apk add --no-cache git python3 py3-pip openssh make curl
+RUN apk add --no-cache git make curl
 
 RUN adduser -D -u $UID app
 
@@ -17,8 +17,6 @@ ENV GOPATH /home/app/go
 ENV PATH $PATH:/home/app/.local/bin:/home/app/go/bin
 
 RUN mkdir /app && chown app:app /app
-
-RUN pip install --break-system-packages wait-for-it
 
 ENV GOMPLATE_VERSION=v3.11.5
 

@@ -6,6 +6,8 @@
 
 API Gateway is a high-performance, configurable API gateway built on top of [Lura (KrakenD)](https://github.com/luraproject/lura).
 
+![API Gateway](https://www.connecting-software.com/wp-content/uploads/2023/01/API-Gateway-Diagram.webp)
+
 ## Table of Contents
 
 - [Clone the repository](#clone-the-repository)
@@ -36,7 +38,7 @@ git clone git@github.com:omarfawzi/API-Gateway.git
 
 
 ### Configuration
-The gateway uses [Lura Configuration](https://www.krakend.io/docs/configuration/structure/) files for setting up the gateway config
+The gateway uses [Lura Configuration](https://www.krakend.io/docs/configuration/structure/) for setting up the gateway config.
 
 ### Server Handlers
 
@@ -171,7 +173,7 @@ backend:
           value: {{ getenv "MY_ENV_TAG" | default "test-env" }}
 ```
 
-> Note: Gomplate is not used at runtime or during the application bootstrap. It runs only as an entrypoint in the container to generate the final configuration file.
+> Gomplate is not used at runtime or during the application bootstrap. It runs only as an entrypoint in the container to generate the final configuration file.
 
 ---
 ### Build & Run
