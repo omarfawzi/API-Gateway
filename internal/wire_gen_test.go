@@ -16,8 +16,8 @@ func TestProvideClientHandlerRegistry(t *testing.T) {
 		t.Fatal("nil registry returned")
 	}
 	handlers := reflect.ValueOf(r).Elem().FieldByName("handlers")
-	if handlers.Len() != 0 {
-		t.Errorf("expected no handlers, got %d", handlers.Len())
+	if handlers.Len() != 1 {
+		t.Errorf("expected one handler, got %d", handlers.Len())
 	}
 }
 
