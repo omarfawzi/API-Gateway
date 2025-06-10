@@ -137,8 +137,7 @@ endpoints:
           - http://ignore.this
         url_pattern: /grpc
         extra_config:
-          github.com/devopsfaith/krakend/transport/http/client/executor:
-            name: grpc
+          github.com/devopsfaith/krakend/grpc:
             endpoint: localhost:50051
             method: helloworld.Greeter/SayHello
 ```

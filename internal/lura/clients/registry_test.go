@@ -27,7 +27,7 @@ func TestHandlerRegistry_RegisterHandlers(t *testing.T) {
 }
 
 func TestProvideHandlersDefault(t *testing.T) {
-	if len(ProvideHandlers()) != 1 {
-		t.Errorf("expected one handler")
+	if len(ProvideHandlers()) != 0 {
+		t.Errorf("expected empty handlers slice")
 	}
 }
