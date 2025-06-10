@@ -11,7 +11,7 @@ extra_config:
 endpoints:
   - endpoint: /posts
     method: GET
-    output_encoding: json
+    output_encoding: no-op
     input_headers:
       - '*'
     input_query_strings:
@@ -21,11 +21,11 @@ endpoints:
           - https://jsonplaceholder.typicode.com
         url_pattern: /posts
         method: GET
-        encoding: json
+        encoding: no-op
 
   - endpoint: /posts/{id}
     method: GET
-    output_encoding: json
+    output_encoding: no-op
     input_headers:
       - '*'
     input_query_strings:
@@ -35,11 +35,11 @@ endpoints:
           - https://jsonplaceholder.typicode.com
         url_pattern: /posts/{id}
         method: GET
-        encoding: json
+        encoding: no-op
 
   - endpoint: /users
     method: GET
-    output_encoding: json
+    output_encoding: no-op
     input_headers:
       - '*'
     input_query_strings:
@@ -49,11 +49,11 @@ endpoints:
           - https://jsonplaceholder.typicode.com
         url_pattern: /users
         method: GET
-        encoding: json
+        encoding: no-op
 
   - endpoint: /comments
     method: GET
-    output_encoding: json
+    output_encoding: no-op
     input_headers:
       - '*'
     input_query_strings:
@@ -63,4 +63,31 @@ endpoints:
           - https://jsonplaceholder.typicode.com
         url_pattern: /comments
         method: GET
-        encoding: json
+        encoding: no-op
+
+  - endpoint: /grpc/empty
+    backend:
+      - url_pattern: /
+        host:
+          - grpcb.in:9000
+        extra_config:
+          plugins/grpc:
+            method: grpcbin.GRPCBin/Empty
+
+  - endpoint: /grpc/headers
+    backend:
+      - url_pattern: /
+        host:
+          - grpcb.in:9000
+        extra_config:
+          plugins/grpc:
+            method: grpcbin.GRPCBin/HeadersUnary
+
+  - endpoint: /grpc/dummy
+    backend:
+      - url_pattern: /
+        host:
+          - grpcb.in:9000
+        extra_config:
+          plugins/grpc:
+            method: grpcbin.GRPCBin/DummyUnary

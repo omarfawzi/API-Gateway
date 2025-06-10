@@ -17,7 +17,8 @@ func ProvideProxyFactory(
 ) proxy.Factory {
 	executorFactory := plugin.HTTPRequestExecutor(logger, httpRequestExecutor)
 	martianFactory := martian.NewConfiguredBackendFactory(logger, executorFactory)
-	backendFactory := cb.BackendFactory(martianFactory, logger)
+	grpcFactory := NewGrpcBackendFactory(logger, martianFactory)
+	backendFactory := cb.BackendFactory(grpcFactory, logger)
 
 	return proxy.NewDefaultFactory(backendFactory, logger)
 }

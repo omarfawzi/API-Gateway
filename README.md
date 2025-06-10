@@ -15,6 +15,7 @@ API Gateway is a high-performance, configurable API gateway built on top of [Lur
 - [Proxy Req/Resp Modifiers](#proxy-reqresp-modifiers)
 - [Client Handlers](#client-handlers)
 - [Backend Middlewares](#backend-middlewares)
+- [gRPC Support](#grpc-support)
 - [Dynamic Configuration File](#dynamic-configuration-file)
 - [Build & Run](#build--run)
 - [Diagram](#diagram)
@@ -31,6 +32,8 @@ git clone git@github.com:omarfawzi/API-Gateway.git
 - Configurable via Lura v3 YAML configuration
 - Debug and release modes
 - Integrated Sentry error tracking
+- gRPC backend support using declarative configuration
+
 
 ### Configuration
 The gateway uses [Lura Configuration](https://www.krakend.io/docs/configuration/structure/) files for setting up the gateway config
@@ -121,6 +124,22 @@ backend:
 ```
 
 For a list of opensource plugins, check https://github.com/krakend/krakend-ce/blob/master/backend_factory.go.
+
+### gRPC Support
+The gateway can proxy gRPC backends using a declarative configuration section. Example:
+
+```yaml
+endpoints:
+  - endpoint: /grpc/dummy
+    method: POST
+    backend:
+       - url_pattern: /
+         host:
+           - grpcb.in:9000
+         extra_config:
+           plugins/grpc:
+             method: grpcbin.GRPCBin/DummyUnary
+```
 
 ### Dynamic Configuration File
 We use [Gomplate](https://github.com/hairyhenderson/gomplate) to dynamically generate the Lura configuration file (`config/config.json`) from a template (`config/config.yaml`). 
