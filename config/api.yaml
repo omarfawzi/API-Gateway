@@ -65,7 +65,8 @@ endpoints:
         method: GET
         encoding: no-op
 
-  - endpoint: /grpc/empty
+  - endpoint: /v1/grpc/empty
+    method: POST
     backend:
       - url_pattern: /
         host:
@@ -74,7 +75,8 @@ endpoints:
           plugins/grpc:
             method: grpcbin.GRPCBin/Empty
 
-  - endpoint: /grpc/headers
+  - endpoint: /v1/grpc/headers
+    method: POST
     backend:
       - url_pattern: /
         host:
@@ -83,7 +85,8 @@ endpoints:
           plugins/grpc:
             method: grpcbin.GRPCBin/HeadersUnary
 
-  - endpoint: /grpc/dummy
+  - endpoint: /v1/grpc/dummy
+    method: POST
     backend:
       - url_pattern: /
         host:
