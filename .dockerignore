@@ -1,0 +1,4 @@
+# Ignore all proto files by default
+proto/*
+# But allow .pb descriptor files
+!proto/**/*.proto

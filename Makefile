@@ -3,7 +3,8 @@
 # ========================
 CONFIG_FILE                ?= config/$(basename $(CONFIG_TEMPLATE_FILE)).json
 PORT                       ?= 8080
-
+PROTO_DIR := ./proto
+PROTO_FILES := $(shell find $(PROTO_DIR) -name '*.proto')
 # ========================
 # Build and Run
 # ========================
@@ -28,7 +29,7 @@ install-wire:
 # ========================
 .PHONY: docker docker-up docker-stop docker-destroy
 
-docker: wire
+docker: wire descriptors
 	[ -f .env ] || cp .env.dist .env
 	docker network create gateway || true
 	docker-compose up
@@ -104,3 +105,14 @@ render-templates:
 	gomplate -f config/$${CONFIG_TEMPLATE_FILE} -o config/rendered_config_$(basename $(CONFIG_TEMPLATE_FILE)).yaml
 	yq eval -o=json config/rendered_config_$(basename $(CONFIG_TEMPLATE_FILE)).yaml > config/$(basename $(CONFIG_TEMPLATE_FILE)).json
 	rm config/rendered_config_$(basename $(CONFIG_TEMPLATE_FILE)).yaml
+
+# ========================
+# gRPC commands
+# ========================
+.PHONY: descriptors
+descriptors:
+	@for proto in $(PROTO_FILES); do \
+		pbfile=$${proto%.proto}.pb; \
+		echo "Generating $$pbfile from $$proto..."; \
+		protoc --descriptor_set_out=$$pbfile --include_imports --proto_path=$(PROTO_DIR) $$proto; \
+	done

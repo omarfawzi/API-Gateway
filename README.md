@@ -132,15 +132,21 @@ The gateway can proxy gRPC backends using a declarative configuration section. E
 
 ```yaml
 endpoints:
-  - endpoint: /grpc/dummy
+  - endpoint: /v1/grpc/dummy
     method: POST
     backend:
-       - url_pattern: /
-         host:
+       - host:
            - grpcb.in:9000
          extra_config:
            plugins/grpc:
              method: grpcbin.GRPCBin/DummyUnary
+             descriptor_file: ./proto/grpcb/grpcbin.pb
+```
+
+To generate the `.pb` files, add your `.proto` file under `proto` directory then run
+
+```shell
+make descriptors
 ```
 
 ### Dynamic Configuration File

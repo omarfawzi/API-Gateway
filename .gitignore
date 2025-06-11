@@ -5,3 +5,4 @@ config/*.json
 vendor
 .DS_Store
 var/crypto/*
+proto/**/*.pb

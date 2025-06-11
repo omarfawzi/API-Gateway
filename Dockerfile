@@ -32,13 +32,19 @@ WORKDIR /app
 # Build Stage
 FROM golang-base AS build
 
-RUN apk add --no-cache git upx curl
+RUN apk add --no-cache git upx curl protobuf protobuf-dev
 
 WORKDIR /go/app
 COPY . /go/app
 
 # Setup go env
 RUN go env -w GOOS=linux CGO_ENABLED=0
+
+# Compile proto descriptor files
+RUN for proto in $(find ./proto -name "*.proto"); do \
+      pbfile="${proto%.proto}.pb"; \
+      protoc --descriptor_set_out="$pbfile" --include_imports --proto_path=./proto "$proto"; \
+    done
 
 # Build app
 RUN go build -ldflags="-w -s" -trimpath -o bin/app ./cmd/main.go
@@ -59,6 +65,7 @@ EXPOSE 8080
 RUN addgroup -S app && adduser -S app -G app
 
 COPY --from=build --chown=app:app --chmod=755 /go/app/config config
+COPY --from=build --chown=app:app --chmod=755 /go/app/proto proto
 COPY --from=build --chown=0:0 --chmod=755 /go/app/scripts/start.sh /start.sh
 COPY --from=build --chown=0:0 --chmod=755 /go/app/bin/app app
 COPY --from=build --chown=0:0 --chmod=755 /usr/local/bin/gomplate /usr/local/bin/gomplate
