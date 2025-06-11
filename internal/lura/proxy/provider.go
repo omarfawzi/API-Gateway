@@ -1,6 +1,7 @@
 package proxy
 
 import (
+	"gateway/internal/lura/proxy/grpc"
 	cb "github.com/krakendio/krakend-circuitbreaker/v2/gobreaker/proxy"
 	martian "github.com/krakendio/krakend-martian/v2"
 	luraConfig "github.com/luraproject/lura/v2/config"
@@ -17,7 +18,7 @@ func ProvideProxyFactory(
 ) proxy.Factory {
 	executorFactory := plugin.HTTPRequestExecutor(logger, httpRequestExecutor)
 	martianFactory := martian.NewConfiguredBackendFactory(logger, executorFactory)
-	grpcFactory := NewGrpcBackendFactory(logger, martianFactory)
+	grpcFactory := grpc.NewBackendFactory(logger, martianFactory)
 	backendFactory := cb.BackendFactory(grpcFactory, logger)
 
 	return proxy.NewDefaultFactory(backendFactory, logger)

@@ -86,10 +86,17 @@ endpoints:
             descriptor_file: ./proto/grpcb/grpcbin.pb
 
   - endpoint: /v1/grpc/dummy
+    input_headers:
+      - '*'
+    input_query_strings:
+      - '*'
     method: POST
     backend:
       - host:
           - grpcb.in:9000
+        input_query_strings:
+          - f_int32
+          - f_bool
         extra_config:
           plugins/grpc:
             method: grpcbin.GRPCBin/DummyUnary
