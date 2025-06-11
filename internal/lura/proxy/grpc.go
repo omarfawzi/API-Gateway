@@ -5,11 +5,6 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"google.golang.org/protobuf/reflect/protoregistry"
-	"io"
-	"os"
-	"strings"
-
 	"github.com/luraproject/lura/v2/config"
 	"github.com/luraproject/lura/v2/logging"
 	"github.com/luraproject/lura/v2/proxy"
@@ -19,8 +14,12 @@ import (
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/reflect/protodesc"
 	"google.golang.org/protobuf/reflect/protoreflect"
+	"google.golang.org/protobuf/reflect/protoregistry"
 	"google.golang.org/protobuf/types/descriptorpb"
 	"google.golang.org/protobuf/types/dynamicpb"
+	"io"
+	"os"
+	"strings"
 )
 
 const Namespace = "plugins/grpc"
@@ -38,6 +37,13 @@ var (
 type grpcConfig struct {
 	Method         string `json:"method"`
 	DescriptorFile string `json:"descriptor_file"`
+}
+
+type grpcHandler struct {
+	conn          *grpc.ClientConn
+	fullMethod    string
+	inputFactory  func() proto.Message
+	outputFactory func() proto.Message
 }
 
 func NewGrpcBackendFactory(logger logging.Logger, next proxy.BackendFactory) proxy.BackendFactory {
@@ -66,7 +72,63 @@ func NewGrpcBackendFactory(logger logging.Logger, next proxy.BackendFactory) pro
 			return next(remote)
 		}
 
-		return buildProxyHandler(conn, desc)
+		fullMethod := fmt.Sprintf("/%s/%s", desc.Parent().FullName(), desc.Name())
+		inputPrototype := dynamicpb.NewMessage(desc.Input())
+		outputPrototype := dynamicpb.NewMessage(desc.Output())
+
+		handler := grpcHandler{
+			conn:       conn,
+			fullMethod: fullMethod,
+			inputFactory: func() proto.Message {
+				return inputPrototype.ProtoReflect().New().Interface()
+			},
+			outputFactory: func() proto.Message {
+				return outputPrototype.ProtoReflect().New().Interface()
+			},
+		}
+
+		return handler.asProxy()
+	}
+}
+
+func (h grpcHandler) asProxy() proxy.Proxy {
+	return func(ctx context.Context, r *proxy.Request) (*proxy.Response, error) {
+		body, err := io.ReadAll(r.Body)
+		if err != nil {
+			return nil, err
+		}
+
+		input := h.inputFactory()
+		if len(body) > 0 {
+			if err := protojson.Unmarshal(body, input); err != nil {
+				return nil, err
+			}
+		}
+
+		output := h.outputFactory()
+		if err := h.conn.Invoke(ctx, h.fullMethod, input, output); err != nil {
+			return nil, err
+		}
+
+		jsonBytes, err := protojson.Marshal(output)
+		if err != nil {
+			return nil, errInvalidJSON
+		}
+
+		var data map[string]interface{}
+		if err := json.Unmarshal(jsonBytes, &data); err != nil {
+			return nil, err
+		}
+
+		return &proxy.Response{
+			Data:       data,
+			IsComplete: true,
+			Metadata: proxy.Metadata{
+				Headers: map[string][]string{
+					"Content-Type": {"application/json"},
+				},
+			},
+		}, nil
 	}
 }
 
@@ -157,49 +219,6 @@ func findServiceDescriptor(
 		}
 	}
 	return nil, errInvalidService
-}
-
-func buildProxyHandler(conn *grpc.ClientConn, methodDesc protoreflect.MethodDescriptor) proxy.Proxy {
-	return func(ctx context.Context, r *proxy.Request) (*proxy.Response, error) {
-		body, err := io.ReadAll(r.Body)
-		if err != nil {
-			return nil, err
-		}
-
-		inputMsg := dynamicpb.NewMessage(methodDesc.Input())
-		if len(body) > 0 {
-			if err := protojson.Unmarshal(body, inputMsg); err != nil {
-				return nil, err
-			}
-		}
-
-		outputMsg := dynamicpb.NewMessage(methodDesc.Output())
-
-		fullMethod := fmt.Sprintf("/%s/%s", methodDesc.Parent().FullName(), methodDesc.Name())
-		if err := conn.Invoke(ctx, fullMethod, inputMsg, outputMsg); err != nil {
-			return nil, err
-		}
-
-		jsonBytes, err := protojson.Marshal(outputMsg)
-		if err != nil {
-			return nil, errInvalidJSON
-		}
-
-		var data map[string]interface{}
-		if err := json.Unmarshal(jsonBytes, &data); err != nil {
-			return nil, err
-		}
-
-		return &proxy.Response{
-			Data:       data,
-			IsComplete: true,
-			Metadata: proxy.Metadata{
-				Headers: map[string][]string{
-					"Content-Type": {"application/json"},
-				},
-			},
-		}, nil
-	}
 }
 
 func parseServiceMethod(full string) (string, string, error) {
