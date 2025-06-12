@@ -11,4 +11,5 @@ var (
 	errMissingGRPCConfig   = errors.New("[gRPC] missing gRPC config")
 	errMissingMethodConfig = errors.New("[gRPC] missing method in config")
 	errMissingDescriptor   = errors.New("[gRPC] missing descriptor_file in config")
+	errUnsupportedKind     = errors.New("[gRPC] unsupported kind")
 )
