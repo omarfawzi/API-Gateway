@@ -35,6 +35,7 @@ git clone git@github.com:omarfawzi/API-Gateway.git
 - Debug and release modes
 - Integrated Sentry error tracking
 - gRPC backend support using declarative configuration
+- Per-path HTTP/1.x or HTTP/2 control via config
 
 
 ### Configuration
@@ -177,7 +178,11 @@ backend:
           scope: [request]
           name: X-Custom-Env
           value: {{ getenv "MY_ENV_TAG" | default "test-env" }}
+      backend/http/client:
+        version: "1"
 ```
+This forces HTTP/1.1 for that backend. Use `version: "2"` or omit the field to
+enable HTTP/2 when supported.
 
 > Gomplate is not used at runtime or during the application bootstrap. It runs only as an entrypoint in the container to generate the final configuration file.
 

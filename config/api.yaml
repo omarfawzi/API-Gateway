@@ -50,6 +50,9 @@ endpoints:
         url_pattern: /users
         method: GET
         encoding: no-op
+        extra_config:
+          backend/http/client:
+            version: "1"
 
   - endpoint: /comments
     method: GET

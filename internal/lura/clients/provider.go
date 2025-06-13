@@ -1,6 +1,9 @@
 package clients
 
 import (
+	"context"
+	"net/http"
+
 	luraConfig "github.com/luraproject/lura/v2/config"
 	"github.com/luraproject/lura/v2/logging"
 	"github.com/luraproject/lura/v2/transport/http/client"
@@ -10,8 +13,11 @@ import (
 func ProvideHTTPRequestExecutor(
 	logger logging.Logger,
 ) func(*luraConfig.Backend) client.HTTPRequestExecutor {
-	return plugin.HTTPRequestExecutor(logger, func(*luraConfig.Backend) client.HTTPRequestExecutor {
-		return client.DefaultHTTPRequestExecutor(client.NewHTTPClient)
+	return plugin.HTTPRequestExecutor(logger, func(be *luraConfig.Backend) client.HTTPRequestExecutor {
+		version := parseHTTPVersion(be)
+		return client.DefaultHTTPRequestExecutor(func(context.Context) *http.Client {
+			return newHTTPClient(version)
+		})
 	})
 }
 
