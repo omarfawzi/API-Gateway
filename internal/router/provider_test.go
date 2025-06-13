@@ -21,7 +21,9 @@ func TestProvideServiceConfig(t *testing.T) {
 	if _, err := tmp.WriteString(data); err != nil {
 		t.Fatal(err)
 	}
-	tmp.Close()
+	if err := tmp.Close(); err != nil {
+		t.Fatal(err)
+	}
 
 	oldArgs := os.Args
 	oldFS := flag.CommandLine
@@ -50,7 +52,9 @@ func TestProvideServiceConfigOverride(t *testing.T) {
 	if _, err := tmp.WriteString(data); err != nil {
 		t.Fatal(err)
 	}
-	tmp.Close()
+	if err := tmp.Close(); err != nil {
+		t.Fatal(err)
+	}
 
 	oldArgs := os.Args
 	oldFS := flag.CommandLine
