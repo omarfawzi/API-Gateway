@@ -6,7 +6,27 @@
 
 API Gateway is a high-performance, configurable API gateway built on top of [Lura (KrakenD)](https://github.com/luraproject/lura).
 
-![API Gateway](https://www.connecting-software.com/wp-content/uploads/2023/01/API-Gateway-Diagram.webp)
+```mermaid
+graph LR
+    A[Client] --> B[API Gateway]
+
+    B --> C1[REST]
+    B --> C2[REST]
+    B --> D[gRPC]
+
+    C1 --> E1[(Resource)]
+    C2 --> E2[(Resource)]
+    D --> F[(Resource)]
+
+    B:::gateway
+    C1:::rest
+    C2:::rest
+    D:::grpc
+
+    classDef gateway fill:#dff0ff,stroke:#333,stroke-width:2px;
+    classDef rest fill:#ffe5e5,stroke:#ff9966,stroke-width:2px;
+    classDef grpc fill:#e0eaff,stroke:#6699cc,stroke-width:2px;
+```
 
 ## Table of Contents
 
