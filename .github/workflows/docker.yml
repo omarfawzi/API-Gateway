@@ -40,6 +40,7 @@ jobs:
 
       - name: Push Docker image
         run: |
-          IMAGE_NAME=ghcr.io/${{ github.repository }}/api-gateway
+          REPO_LOWER=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+          IMAGE_NAME=ghcr.io/$REPO_LOWER/api-gateway
           docker tag api-gateway:${{ env.IMAGE_TAG }} $IMAGE_NAME:${{ env.IMAGE_TAG }}
           docker push $IMAGE_NAME:${{ env.IMAGE_TAG }}
